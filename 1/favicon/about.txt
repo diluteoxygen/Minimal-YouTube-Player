@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Mako
+- Font Author: Copyright (c) 2007 by vernon adams. All rights reserved.
+- Font Source: http://fonts.gstatic.com/s/mako/v18/H4coBX6Mmc_Z0ST09g478Lo.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
