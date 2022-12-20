@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minimal YouTube Player</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Minimal YouTube Player</h1>
+  <input id="youtube-url" type="text" placeholder="Paste YouTube URL here" style="width: 40%">
+  <button onclick="playVideo()"><i class="fa fa-search"></i></button>
+  <br><br>
+  <div id="player"></div>
+
+  <script>
+    function getVideoId(youtubeUrl) {
+      // Check if the URL is a shortened URL (e.g. https://youtu.be/dQw4w9WgXcQ)
+      if (youtubeUrl.startsWith("https://youtu.be/")) {
+        // Split the URL by the "/" character
+        var urlParts = youtubeUrl.split("/");
+  
+        // Take the last element in the array (the video ID)
+        return urlParts[urlParts.length - 1];
+      }
+  
+      // Otherwise, assume the URL is a regular video URL (e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+      // Split the URL by the "v=" parameter
+      var videoId1 = youtubeUrl.split("v=")[1];
+  
+      // Split the remaining URL by the "&" parameter, if present
+      return videoId1.split("&")[0];
+    }
+  
+    function playVideo() {
+      // Get the YouTube URL from the input
+      var youtubeUrl = document.getElementById("youtube-url").value;
+  
+      // Extract the video ID from the URL using the getVideoId function
+      var videoId = getVideoId(youtubeUrl);
+  
+      // Create an iFrame element and set its src to the YouTube embed URL
+      var iframe = document.createElement("iframe");
+      iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+      
+      // Set the width and height of the iFrame
+      iframe.width = 960;
+      iframe.height = 540;
+  
+
+      // Add the iFrame to the player div
+      var player = document.getElementById("player");
+      player.innerHTML = "";
+      player.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>

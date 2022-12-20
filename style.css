@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+
+  }
+
+  h1 {
+    text-align: center;
+    color: aliceblue;
+  }
+  
+  input[type="text"], button {
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #5A5A5A;
+    color: white;
+    cursor: pointer;
+  }
+  
+  input[type="text"] {
+    width: 60%;
+    color: aliceblue;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  #player {
+    align-items: center;
+    width: 960px;
+    height: 540px;
+    margin: 0 auto;
+    color: aliceblue;
+    box-shadow: 0px 10px 20px #888888;
+  }
+
+  
