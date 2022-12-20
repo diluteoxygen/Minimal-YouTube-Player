@@ -1,6 +1,8 @@
-# Minimal YouTube Player
-A lightweight, simplified version of a media player that is designed specifically to play YouTube videos. 
 
+
+# Minimal Youtube Player
+
+A lightweight, simplified version of a media player that is designed specifically to play YouTube videos. 
 ### Features
 - Minimal interface for a clean and streamlined user experience
 - Customizable through the use of the provided source code
