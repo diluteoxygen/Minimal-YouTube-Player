@@ -1,23 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimal YouTube Player</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
- 
+  <meta name="description" content="A clean, minimal YouTube video player with modern UI">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/diluteoxygen/Minimal-YouTube-Player/main/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/diluteoxygen/Minimal-YouTube-Player/main/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/diluteoxygen/Minimal-YouTube-Player/main/favicon/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/diluteoxygen/Minimal-YouTube-Player/main/favicon/android-chrome-512x512.png">
- 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Minimal YouTube Player</h1>
-  <input id="youtube-url" type="text" placeholder="Paste YouTube URL here" autocomplete="off">
-  <button onclick="playVideo()"><i class="fa fa-search"></i></button>
-  <br><br>
-  <div id="player"></div>
+  <div class="container">
+    <header>
+      <h1><i class="fab fa-youtube"></i> Minimal YouTube Player</h1>
+    </header>
+    
+    <main>
+      <div class="search-container">
+        <div class="input-group">
+          <input 
+            id="youtube-url" 
+            type="url" 
+            placeholder="Paste YouTube URL here..." 
+            autocomplete="off"
+            aria-label="YouTube URL"
+            required
+          >
+          <button id="play-button" onclick="playVideo()" aria-label="Play video">
+            <i class="fas fa-play"></i>
+            <span>Play</span>
+          </button>
+        </div>
+        
+        <div id="error-message" class="error-message" role="alert" aria-live="polite">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span id="error-text"></span>
+        </div>
+        
+        <div id="success-message" class="success-message" role="status" aria-live="polite">
+          <i class="fas fa-check-circle"></i>
+          <span>Video loaded successfully!</span>
+        </div>
+      </div>
+      
+      <div id="player" role="region" aria-label="Video player"></div>
+    </main>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
